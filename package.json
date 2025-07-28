@@ -2,12 +2,33 @@
   "name": "ulapin",
   "version": "1.0.0",
   "main": "index.js",
+  "workspaces": [
+    "apps/server/*",
+    "apps/client/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  
+    "client:dev": "npm --prefix apps/client run dev",
+    "client:build": "npm --prefix apps/client run build",
+    "client:start": "npm --prefix apps/client run start",
+    "client:lint": "npm --prefix apps/client run lint",
+
+    "server:build": "npm --prefix apps/server run build",
+    "server:format": "npm --prefix apps/server run format",
+    "server:start": "npm --prefix apps/server run start",
+    "server:dev": "npm --prefix apps/server run start:dev",
+    "server:debug": "npm --prefix apps/server run start:debug",
+    "server:prod": "npm --prefix apps/server run start:prod",
+    "server:lint": "npm --prefix apps/server run lint",
+    "server:test": "npm --prefix apps/server run test",
+    "server:test:watch": "npm --prefix apps/server run test:watch",
+    "server:test:cov": "npm --prefix apps/server run test:cov",
+    "server:test:debug": "npm --prefix apps/server run test:debug",
+    "server:test:e2e": "npm --prefix apps/server run test:e2e"
   },
   "keywords": [],
-  "author": "",
+  "author": "mar",
   "license": "ISC",
-  "description": "",
+  "description": "Weather Application using next js and nest js",
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

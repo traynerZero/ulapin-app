@@ -23,8 +23,7 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-    working_dir: /app/apps/client
-    command: npm run start
+    working_dir: /app
     volumes:
       - .:/app
     restart: unless-stopped

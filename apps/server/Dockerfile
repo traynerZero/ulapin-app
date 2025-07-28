@@ -1,5 +1,5 @@
 # Base image
-FROM node:18-alpine
+FROM node:22-alpine
 
 WORKDIR /app
 
@@ -8,11 +8,11 @@ COPY apps/server ./apps/server
 COPY package*.json ./
 COPY tsconfig*.json ./
 
-# Install dependencies for server
+# Install dependencies
 RUN cd apps/server && npm install
 
 # Build the NestJS app
 RUN cd apps/server && npm run build
 
-# Run the app
-CMD ["node", "apps/server/dist/main"]
+# Run the built file
+CMD ["node", "dist/main.js"]
